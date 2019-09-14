@@ -1,2 +1,3 @@
 # CS50
-some solutions for CS50 home projects
+
+Some solutions to CS50 problem sets
