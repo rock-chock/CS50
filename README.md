@@ -2,6 +2,8 @@
 
 Solutions to CS50 problem sets
 
+## Problem sets specifications
+
 PSET0:
 https://docs.cs50.net/2018/x/psets/0/pset0.html
 
