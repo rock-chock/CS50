@@ -29,6 +29,7 @@ https://docs.cs50.net/2019/x/psets/7/index.html
 PSET8:
 https://docs.cs50.net/2019/x/psets/8/index.html
 
+
 Final project (see color_emotions repository)
 
 https://github.com/rock-chock/color_emotions
