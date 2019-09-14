@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="col" style="margin-left: 2%">
+        <form action="/compare" enctype="multipart/form-data" method="post">
+            <!-- TODO -->
+
+            <h2>Select 2 files to compare for similarities <br> and one of 3 algorithms</h2><br>
+            <div class="form-group">
+                Select file 1: <input type="file" name="file1" class="form-control-file"><br>
+                Select file 2: <input type="file" name="file2" class="form-control-file"><br>
+            </div>
+
+            <div class="form-group">
+                <p>Select one of 3 algorithms:</p>
+                <div class = "form-check">
+                    <label class ="form-check-label">
+                        <input type="radio" name="algorithm"  value="lines" class="form-check-input" checked>Lines<br>
+                    </label>
+                </div>
+                <div class = "form-check">
+                    <label class ="form-check-label">
+                        <input type="radio" name="algorithm"  value="sentences" class="form-check-input">Sentences<br>
+                    </label>
+                </div>
+                <div class = "form-check">
+                    <label class ="form-check-label">
+                        <input type="radio" name="algorithm"  value="substrings" class="form-check-input">Substrings<br>
+                        <input type="number" name="length" class="form-control" min="1" placeholder="of length n">
+                    </label>
+                </div>
+            </div>
+
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+            <script>
+                // Select comparison by substrings when length has focus
+                $('input[name=length]').focus(function() {
+                    $('input[name=algorithm][value=substrings]').prop('checked', true);
+                });
+            </script>
+
+
+            <!-- Submit button-->
+            <button type="submit" class="btn btn-primary">Compare</button>
+
+        </form>
+    </div>
+
+{% endblock %}

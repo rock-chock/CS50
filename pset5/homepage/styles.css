@@ -1,0 +1,49 @@
+ /* Arrange carousel imgs   */
+ .carousel-inner img
+  {
+    max-width: 1200px;
+    margin: auto;
+
+  }
+
+/* Set new font color to description*/
+  .blockquote
+  {
+    color: LightSlateGray;
+  }
+
+/* Align Youtube video to the center*/
+  #video
+  {
+    display: block;
+    margin: auto;
+  }
+
+/* Set background color for main*/
+  main
+  {
+    background-color: LightCyan;
+  }
+
+/* Make equal width and height of images*/
+
+  .card-img-top
+  {
+    height: 180px;
+  }
+
+/* Delete bottom margin of main*/
+  main
+  {
+    margin-bottom: 0px;
+  }
+
+/* Customize footer*/
+  footer
+  {
+    background-color: LightSteelBlue;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }

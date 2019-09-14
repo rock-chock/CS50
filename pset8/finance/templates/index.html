@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+		<ul class=flashes>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+
+
+{% block main %}
+
+<table class="table">
+      <thead class="thead-light">
+            <tr>
+                  <th scope="col">Symbol</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Shares</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">TOTAL</th>
+            </tr>
+      </thead>
+      <tbody>
+            {% if rows %}
+                {% for row in rows %}
+                    <tr>
+                          <td>{{ row["symbol"] }}</td>
+                          <td>{{ row["name"] }}</td>
+                          <td>{{ row["shares"] }}</td>
+                          <td>{{ row["price"] }}</td>
+                          <td>{{ row["total"] }}</td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+            <tr>
+                  <td>CASH</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>{{ cash }}</td>
+            </tr>
+            <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><strong>{{ portfolio_total }}</strong></td>
+            </tr>
+      </tbody>
+</table>
+
+{% endblock %}

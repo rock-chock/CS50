@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Form</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post" class="needs-validation" novalidate>
+
+        <!-- User's info -->
+        <div class="form-group">
+            <label>First Name:
+                <input type="text" name="first_name" class="form-control" autocomplete="off" autofocus required>
+                <div class="invalid-feedback"> Please provide a fist name.</div>
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>Last name:
+                <input type="text" class="form-control" name="last_name" autocomplete="off" required>
+                <div class="invalid-feedback"> Please provide a last name.</div>
+            </label>
+        </div>
+
+        <!-- Select dropdowns for level of education  TO DO !!!!!!!!-->
+        <div class="form-group">
+            <label>Select your level of education:
+                <select class="form-control" name="degree" required>
+                    <option disabled selected value>Level of education</option>
+                    <option value="no_degree">No degree</option>
+                    <option value="bachelor">Bachelor's degree</option>
+                    <option value="master">Master's degree</option>
+                    <option value="doctor">Doctoral degree</option>
+                </select>
+                <div class="invalid-feedback"> Please select level of education</div>
+            </label>
+        </div>
+
+        <!-- Checkboxes for topics user is interested in-->
+        <div class="form-group">
+            <label>Choose topics you are interested in:
+                <div class="checkbox">
+                    <label><input type="checkbox" name="it" value="it">IT</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" name="linguistics" value="linguistics">Linguistics</label>
+                </div>
+                <div class="form-group">
+                    <label><input type="checkbox" name="arts" value="arts">Arts</label>
+                </div>
+            </label>
+        </div>
+
+
+
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <!-- Script for restricted submission. From https://getbootstrap.com/docs/4.1/components/forms/#validation -->
+    <!-- !!! Doesn't work for selection dropdown and for checkbox-->
+    <script>
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+
+
+
+{% endblock %}

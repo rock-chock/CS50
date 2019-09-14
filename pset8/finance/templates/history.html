@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped" id="table">
+        <thead>
+            <tr>
+              <th class="sorting_asc" tabindex="0" aria-controls="example" aria-sort="ascending" aria-label="Activate to sort column descending">Symbol</th>
+              <th scope="col">Shares</th>
+              <th scope="col">Price</th>
+              <th scope="col">Transacted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row["symbol"] }}</td>
+                <td>{{ row["shares"] }}</td>
+                <td>{{ row["price"] }}</td>
+                <td>{{ row["date_time"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"> </script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"> </script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"> </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#table').DataTable( {
+                "paging":   false,
+                "info":     false,
+                "searching": false,
+                "order": [[ 3, "desc" ]]
+            } );
+        } );
+    </script>
+
+{% endblock %}

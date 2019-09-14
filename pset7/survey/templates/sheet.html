@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <table class="table table-striped" id="table">
+        <thead>
+            <tr>
+              <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" style="width: 48px;" aria-sort="ascending">Name</th>
+              <th scope="col">Last name</th>
+              <th scope="col">Degree</th>
+              <th scope="col">Topics</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+              <td>{{ row["first_name"] }}</td>
+              <td>{{ row["last_name"] }}</td>
+              <td>{{ row["degree"] }}</td>
+              <td>{{ row["topics"] }}</td>
+            </tr>
+            {% endfor  %}
+        </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"> </script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"> </script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"> </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#table').DataTable( {
+                "paging":   false,
+                "info":     false,
+                "searching": false
+            } );
+        } );
+    </script>
+
+{% endblock %}
