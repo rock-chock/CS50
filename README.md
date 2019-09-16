@@ -1,6 +1,6 @@
 # CS50
 
-Solutions to CS50 problem sets
+My solutions to CS50 problem sets
 
 ## Problem sets specifications
 
